@@ -7,32 +7,21 @@ public class BasePlusCommissionEmployee extends Employee{
 
    // six-argument constructor
    public BasePlusCommissionEmployee(String firstName, String lastName, 
-      String socialSecurityNumber, double grossSales, double commissionRate, double baseSalary) {
-      if (baseSalary < 0.0) {
-         throw new IllegalArgumentException(
-            "Base salary must be >= 0.0");
+      String socialSecurityID, double grossSales, double commissionRate, double baseSalary) {
+
+         //Use the super class Employee to create the Object
+         super(firstName, lastName, socialSecurityID);
+
+         if (baseSalary < 0.0) {
+            throw new IllegalArgumentException(
+               "Base salary must be >= 0.0");
+         }
+
+         commissionEmployee = 
+            new CommissionEmployee(firstName, lastName, socialSecurityID, grossSales, commissionRate);
+
+         this.baseSalary = baseSalary;
       }
-
-      commissionEmployee = 
-         new CommissionEmployee(firstName, lastName, socialSecurityNumber, grossSales, commissionRate);
-
-      this.baseSalary = baseSalary;
-   }
-
-   // return first name
-   public String getFirstName() {
-      return commissionEmployee.getFirstName();
-   }
-
-   // return last name
-   public String getLastName() {
-      return commissionEmployee.getLastName();
-   } 
-
-   // return social security number
-   public String getSocialSecurityNumber() {
-      return commissionEmployee.getSocialSecurityNumber();
-   } 
 
    // set commission employee's gross sales amount
    public void setGrossSales(double grossSales) {
