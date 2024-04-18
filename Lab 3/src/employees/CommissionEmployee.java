@@ -1,6 +1,8 @@
+package employees;
 // Fig. 9.10: CommissionEmployee.java
 // CommissionEmployee class uses methods to manipulate its 
 // private instance variables.
+
 public class CommissionEmployee extends Employee {                  
    private double grossSales; // gross weekly sales       
    private double commissionRate; // commission percentage
