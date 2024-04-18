@@ -33,15 +33,9 @@ public class CommissionEmployee extends Employee {
       this.commissionRate = commissionRate;
    } 
 
-   // return first name
-   public String getFirstName() {
-      return firstName;
-   }
+   
 
-   // return last name
-   public String getLastName() {
-      return lastName;
-   }
+   
 
    // return social security number
    public String getSocialSecurityNumber() {
