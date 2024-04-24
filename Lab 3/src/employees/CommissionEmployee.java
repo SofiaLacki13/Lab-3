@@ -12,6 +12,7 @@ public class CommissionEmployee extends Employee {
       double commissionRate) {
       // implicit call to Object constructor occurs here
       super(firstName, lastName, socialSecurityID);
+      
       // if grossSales is invalid throw exception
       if (grossSales < 0.0) {
          throw new IllegalArgumentException(

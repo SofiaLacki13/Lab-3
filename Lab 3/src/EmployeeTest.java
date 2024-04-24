@@ -3,11 +3,13 @@
 //Class: CS 145 f-f 9:30am
 //Purpose: Utilize superclasses to better organize data and to include employees who aren't
 //      on commission at all
+
 import java.util.Scanner;
 import employees.*;
 
 public class EmployeeTest {
     public static void main(String[] args) {
+        //Create empty variables
         String firstName;
         String lastName;
         String socialSecurityID;
@@ -15,7 +17,7 @@ public class EmployeeTest {
         CommissionEmployee commissionEmployee;
         BasePlusCommissionEmployee basePlus;
 
-
+        //Create scanner variable for input
         Scanner input = new Scanner(System.in);
 
         //Get the employee's first name
@@ -37,7 +39,7 @@ public class EmployeeTest {
         //Find extra information about commission employees
         if (commission.equals("y")) {//start of commission
             //Find the employee's commission rate
-            System.out.println("What is the employee's commission rate?");
+            System.out.println("What is the employee's commission rate? 0.0-1.0");
             double commissionRate = input.nextDouble();
 
             //Find the employee's gross sales
@@ -56,19 +58,21 @@ public class EmployeeTest {
 
                 //Create Employee base plus commission object
                 basePlus = new BasePlusCommissionEmployee(firstName, lastName, socialSecurityID, grossSales, commissionRate, basePay);
+                System.out.println();
                 System.out.println(basePlus);
+
             } else {//end of base pay
                 //Create Employee on commission object
                 commissionEmployee = new CommissionEmployee(firstName, lastName, socialSecurityID, grossSales, commissionRate);
+                System.out.println();
                 System.out.println(commissionEmployee.toString());
-
             } //end of commission only employee
 
         } else {//end of commission employees
             employee = new Employee(firstName, lastName, socialSecurityID);
+            System.out.println();
             System.out.println(employee.toString());
         } //set regular employee
         
-
     } //end of main
 } //end of test class
